@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cf-vps-relay-example",
+  "main": "src/worker.mjs",
+  "compatibility_date": "2026-10-21",
+  "workers_dev": false,
+  "preview_urls": false,
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 0.1,
+    "logs": { "enabled": true, "invocation_logs": false },
+    "traces": { "enabled": true, "head_sampling_rate": 0.1 }
+  },
+  "vars": {
+    "ORIGIN_HOST": "vps.example.com",
+    "ORIGIN_PORT": "50001"
+  }
+  // RELAY_UUID is a required secret. Never commit its value.
+}
